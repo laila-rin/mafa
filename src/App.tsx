@@ -1,13 +1,27 @@
-import {useState} from 'react'
-import './App.css'
+import {ReactNode, useState} from 'react'
+import {Profile} from "./pages/Profile.tsx";
+import {Page01} from "./pages/Page01.tsx";
+import {Character} from "./pages/Character.tsx";
+import {PageProps} from "./types.ts";
+
+const pages: ((prop: PageProps) => ReactNode)[] = [
+  Profile,
+  Page01,
+  Character,
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const Page = pages[currentPage];
 
   return (
-    <button onClick={() => setCount((count) => count + 1)}>
-      count is {count}
-    </button>
+    <div className={"max-w-3xl min-h-screen m-auto flex flex-col items-stretch [&>*]:w-full"}>
+      <Page changeScore={(delta) => console.log(delta)}
+            changeProfile={(profile) => console.log(profile)}
+            nextPage={() => setCurrentPage(currentPage + 1)}
+      />
+    </div>
   )
 }
 
