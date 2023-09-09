@@ -1,9 +1,10 @@
-import {ReactNode, useState} from 'react'
+import {ReactNode, useEffect, useState} from 'react'
 import {StartPage} from "./pages/StartPage.tsx";
 import {PageProps} from "./types.ts";
 import {Question} from "./pages/Question.tsx";
 import {Answer, questionNames, questions} from "./pages/Questions.ts";
 import {FinalPage} from "./pages/FinalPage.tsx";
+import {useScore} from "./pages/useScore.tsx";
 
 const pages: ((prop: PageProps) => ReactNode)[] = [
   StartPage,
@@ -19,7 +20,7 @@ function App() {
   const Page = pages[currentPage];
 
   return (
-    <div className={"max-w-3xl min-h-screen m-auto flex flex-col items-stretch [&>*]:w-full"}>
+    <div className={"max-w-[512px] min-h-screen m-auto flex flex-col items-stretch [&>*]:w-full"}>
       <Page
         nextPage={() => {
           setCurrentPage(currentPage + 1)

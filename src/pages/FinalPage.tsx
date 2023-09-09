@@ -3,6 +3,7 @@ import {Character} from "./Character.tsx";
 
 import * as s from "./FinalPage.module.css";
 import {questions} from "./Questions.ts";
+import {Fragment} from "react";
 
 const styles = s as unknown as Record<string, string>;
 
@@ -19,7 +20,7 @@ export const FinalPage = (props: PageProps) => {
 
     <div className={styles["tipps"] + ' p-8'}>Deine Tipps:</div>
 
-    {tipps.map((tipp) => (<>
+    {tipps.map((tipp) => (<Fragment key={tipp}>
         <svg viewBox="0 0 375 149" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M375 0L375 149H0L375 0Z" fill="#DAEBDA"/>
         </svg>
@@ -29,7 +30,7 @@ export const FinalPage = (props: PageProps) => {
         <svg viewBox="0 0 375 149" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6.10352e-05 149L0 0H375L6.10352e-05 149Z" fill="#DAEBDA"/>
         </svg>
-      </>
+      </Fragment>
     ))}
 
     <div className={"flex justify-center py-8"} onClick={() => {
