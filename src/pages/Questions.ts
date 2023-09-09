@@ -1,6 +1,6 @@
 export type Answer = Readonly<{ value: number }>
 
-const StartValue = Symbol("StartValue");
+export const StartValue = Symbol("StartValue");
 
 export type Questions = {
   [key: string]: Readonly<{ [StartValue]: number, readonly [T: string]: Answer }>

@@ -3,11 +3,13 @@ import {StartPage} from "./pages/StartPage.tsx";
 import {PageProps} from "./types.ts";
 import {Question} from "./pages/Question.tsx";
 import {Answer, questionNames, questions} from "./pages/Questions.ts";
+import {FinalPage} from "./pages/FinalPage.tsx";
 
 const pages: ((prop: PageProps) => ReactNode)[] = [
   StartPage,
   ...questionNames.map((question) => (props: PageProps) => <Question
     question={question} {...props} />),
+  FinalPage
 ];
 
 function App() {
