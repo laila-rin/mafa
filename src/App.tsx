@@ -1,13 +1,14 @@
-import {ReactNode, useEffect, useState} from 'react'
+import {ReactNode, useState} from 'react'
 import {StartPage} from "./pages/StartPage.tsx";
 import {PageProps} from "./types.ts";
 import {Question} from "./pages/Question.tsx";
 import {Answer, questionNames, questions} from "./pages/Questions.ts";
 import {FinalPage} from "./pages/FinalPage.tsx";
-import {useScore} from "./pages/useScore.tsx";
+import {Profile} from "./pages/Profile.tsx";
 
 const pages: ((prop: PageProps) => ReactNode)[] = [
   StartPage,
+  Profile,
   ...questionNames.map((question) => (props: PageProps) => <Question
     question={question} {...props} />),
   FinalPage
@@ -16,6 +17,9 @@ const pages: ((prop: PageProps) => ReactNode)[] = [
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<Answer[]>([]);
+  const [profile, setProfile] = useState<Partial<{ alter: number }>>({});
+
+  console.log(profile);
 
   const Page = pages[currentPage];
 
@@ -35,6 +39,7 @@ function App() {
         })}
         isAnswerSelected={(a) => selectedAnswers.includes(a)}
         isQuestionAnswered={(q) => Object.values(questions[q]).some(a => selectedAnswers.includes(a as never))}
+        changeProfile={(p) => setProfile({...profile, ...p})}
       />
     </div>
   )

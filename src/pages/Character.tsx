@@ -1,5 +1,5 @@
 import {PageProps} from "../types.ts";
-import {Answer, questionNames, questions, StartValue} from "./Questions.ts";
+import {questions} from "./Questions.ts";
 import {Adelig} from "./characters/Adelig.tsx";
 import {Ninja} from "./characters/Ninja.tsx";
 import {Magier} from "./characters/Magier.tsx";
