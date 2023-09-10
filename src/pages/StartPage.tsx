@@ -1,7 +1,7 @@
 import {PageProps} from "../types.ts";
 
 export const StartPage = (props: PageProps) => {
-  return <svg width="375" height="1374" viewBox="0 0 375 1374" fill="none" xmlns="http://www.w3.org/2000/svg">
+  return <svg viewBox="0 0 375 1374" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#clip0_146_442)">
       <rect width="375" height="1374" fill="#F8F8F8"/>
       <path

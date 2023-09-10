@@ -11,7 +11,7 @@ type QuestionProps = PageProps & {
 export const Question = (props: QuestionProps) => {
 
   return <div>
-    <div className={styles["question"] + ' py-8'}>{props.question}</div>
+    <div className={styles["question"] + ' py-8 px-3'}>{props.question}</div>
 
 
     <div className={"flex flex-col gap-4"}>

@@ -1,9 +1,9 @@
 
 .question {
-    font-size: 44px;
-    line-height: 64px;
+    font-size: 34px;
+    line-height: 50px;
     text-align: center;
-
+    text-wrap: balanced;
     color: #336C32;
 }
 
@@ -11,6 +11,7 @@
     background: #DAEBDA;
 
     padding-block: 24px;
+    padding-inline: 8px;
 
     font-size: 22px;
     line-height: 32px;
