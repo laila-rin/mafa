@@ -33,11 +33,11 @@ export const FinalPage = (props: PageProps) => {
       </Fragment>
     ))}
 
-    <div className={"flex justify-center py-8"} onClick={() => {
-      window.scrollTo({top: 0, behavior: "instant"})
-      window.location.reload();
-    }}>
-      <svg width="74" height="72" viewBox="0 0 74 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div className={"flex justify-center py-8 gap-6"}>
+      <svg onClick={() => {
+        window.scrollTo({top: 0, behavior: "instant"})
+        window.location.reload();
+      }} width="74" height="72" viewBox="0 0 74 72" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="21.5" cy="32.5" r="21.5" fill="#FFE4C5"/>
         <circle cx="28" cy="46" r="26" fill="#FFD29E"/>
         <circle cx="41.5" cy="32.5" r="32.5" fill="#ED8205"/>
@@ -46,6 +46,43 @@ export const FinalPage = (props: PageProps) => {
         <line x1="29.9648" y1="43.7319" x2="52.7329" y2="20.9638" stroke="#F3F3F3" strokeWidth="7.5"
               strokeLinecap="round"/>
       </svg>
+
+      <svg onClick={() => {
+        const shareData = {
+          title: 'Deine Online Odysse',
+          text: 'Wie gut kennst du dich mit Datenschutz aus? Welcher TechTale Charakter bist du? Mache jetzt den Selbsttest!',
+          url: 'https://github.com/laila-rin/mafa',
+        }
+        navigator.share(shareData).then(() => {
+          console.log('shared successfully')
+        }).catch(() => {
+          console.error('sharing errored')
+        })
+      }} width="74" height="72" viewBox="0 0 74 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="21.5" cy="32.5" r="21.5" fill="#FFE4C5"/>
+        <circle cx="28" cy="46" r="26" fill="#FFD29E"/>
+        <circle cx="41.5" cy="32.5" r="32.5" fill="#ED8205"/>
+        <circle cx="53" cy="20" r="7" fill="#F3F3F3"/>
+        <circle cx="53" cy="20" r="7" fill="#F3F3F3"/>
+        <circle cx="53" cy="20" r="7" fill="#F3F3F3"/>
+        <circle cx="29" cy="31" r="7" fill="#F3F3F3"/>
+        <circle cx="29" cy="31" r="7" fill="#F3F3F3"/>
+        <circle cx="29" cy="31" r="7" fill="#F3F3F3"/>
+        <path
+          d="M58 45C58 48.866 54.866 52 51 52C47.134 52 44 48.866 44 45C44 41.134 47.134 38 51 38C54.866 38 58 41.134 58 45Z"
+          fill="#F3F3F3"/>
+        <path
+          d="M58 45C58 48.866 54.866 52 51 52C47.134 52 44 48.866 44 45C44 41.134 47.134 38 51 38C54.866 38 58 41.134 58 45Z"
+          fill="#F3F3F3"/>
+        <path
+          d="M58 45C58 48.866 54.866 52 51 52C47.134 52 44 48.866 44 45C44 41.134 47.134 38 51 38C54.866 38 58 41.134 58 45Z"
+          fill="#F3F3F3"/>
+        <line x1="33.4583" y1="34.2649" x2="50.2317" y2="45.1577" stroke="#F3F3F3" strokeWidth="5"
+              strokeLinecap="round"/>
+        <line x1="51.448" y1="20.3223" x2="33.3218" y2="28.7747" stroke="#F3F3F3" strokeWidth="5"
+              strokeLinecap="round"/>
+      </svg>
+
     </div>
   </div>
 
