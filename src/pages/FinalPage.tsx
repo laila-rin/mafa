@@ -15,7 +15,7 @@ export const FinalPage = (props: PageProps) => {
     tipps.push("Haha schlecht.")
   }
 
-  return <div className={"flex flex-col pt-8"}>
+  return <div className={"flex flex-col pt-20"}>
     <Character {...props} />
 
     <div className={styles["tipps"] + ' p-8'}>Deine Tipps:</div>
@@ -49,9 +49,9 @@ export const FinalPage = (props: PageProps) => {
 
       <svg onClick={() => {
         const shareData = {
-          title: 'Deine Online Odysse',
+          title: 'Deine Online Odyssee',
           text: 'Wie gut kennst du dich mit Datenschutz aus? Welcher TechTale Charakter bist du? Mache jetzt den Selbsttest!',
-          url: 'https://github.com/laila-rin/mafa',
+          url: 'https://laila-rin.github.io/mafa/',
         }
         navigator.share(shareData).then(() => {
           console.log('shared successfully')
