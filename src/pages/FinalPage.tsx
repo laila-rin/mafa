@@ -21,7 +21,7 @@ export const FinalPage = (props: PageProps) => {
   }
 
   if (props.isAnswerSelected(questions["Wie verschickst du Nachrichten?"]["WhatsApp"])) {
-    tipps.push("Viele Messenger Apps speichern nicht nur deine Daten, wie Nachrichten und Bilder, sondern haben sogar ein Recht darauf, sie weiter zu benutzen! Das heisst das peinliche Bild, das du deiner Besten Freundin oder deinem besten Freund auf WhatsApp geschickt hast, das koennte WhatsApp fuer Plakate nuten oder anderweitig verteilen und du koenntest nichts dagegen tun. Manche Firmen haben die Nutzung von WhatsApp fuer Ihre Mitarbeiter deshalb sogar verboten. Und wusstest du, dass das Mindestalter zur Nuztung von WhatsApp mittlerweile bei 16 Jahren ist?")
+    tipps.push("Viele Messenger Apps speichern nicht nur deine Daten, wie Nachrichten und Bilder, sondern haben sogar ein Recht darauf, sie weiter zu benutzen! Das heisst das peinliche Bild, das du deiner Besten Freundin oder deinem besten Freund auf WhatsApp geschickt hast, das könnte WhatsApp für Plakate nuten oder anderweitig verteilen und du könntest nichts dagegen tun. Manche Firmen haben die Nutzung von WhatsApp für Ihre Mitarbeiter deshalb sogar verboten. Und wusstest du, dass das Mindestalter zur Nutzung von WhatsApp mittlerweile bei 16 Jahren ist?")
   }
 
   if (props.isAnswerSelected(questions["Wie häufig löscht du deinen Browser-Cache?"]["Was ist das?"])) {
@@ -53,7 +53,7 @@ export const FinalPage = (props: PageProps) => {
   }
 
   if (props.isAnswerSelected(questions["Benutzt du Smart-Home-Geräte, wie zum Beispiel Alexa?"]["Ja"])) {
-    tipps.push("Klar, Smart Home Geraete wie Alexa sind praktisch. Aber die hören oft mehr mit, als man denkt!Wenn du über private Sachen redest, denk daran, sie ab und zu auszuschalten. Das schützt deine Privatsphäre.")
+    tipps.push("Klar, Smart Home Geräte wie Alexa sind praktisch. Aber die hören oft mehr mit, als man denkt!Wenn du über private Sachen redest, denk daran, sie ab und zu auszuschalten. Das schützt deine Privatsphäre.")
   }
 
   if (props.isAnswerSelected(questions["Postest du Bilder von dir selbst oder deinen Freunden, auf denen man dein/eure Gesichter sieht?"]["Ja"])) {
