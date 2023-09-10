@@ -4,6 +4,7 @@ import {Character} from "./Character.tsx";
 import * as s from "./FinalPage.module.css";
 import {questions} from "./Questions.ts";
 import {Fragment} from "react";
+import {useScore} from "./useScore.tsx";
 
 const styles = s as unknown as Record<string, string>;
 
@@ -63,6 +64,18 @@ export const FinalPage = (props: PageProps) => {
     tipps.push("Manchmal können Werbeanzeigen (auch auf Instagram, Tiktok oder Snapchat) gefälscht sein oder auf unsichere Seiten führen. Denk daran, aufmerksam zu bleiben und nur auf Anzeigen zu klicken, wenn du sicher bist, dass sie echt sind. So schützt du dich vor möglichen Betrügereien oder unerwünschten Folgen.")
   }
 
+  // character setzen
+  const score = useScore(props);
+  let character = "Noviz*in";
+
+  if (score > 120 && props.isAnswerSelected(questions["Teilst du deinen Standort auf der Snapchat Map?"]["Nie"])
+    && props.isAnswerSelected(questions["Benutzt du deinen echten Namen in sozialen Medien?"]["Nie"])
+    && props.isAnswerSelected(questions["Verlinkst du deinen Standort auf Instagram Posts?"]["Nie"])) character = "Magier*in"
+  else if (score > 120) character = "Adelige*r"
+  else if (score > 90) character = "Ninja"
+  else if (score > 60) character = "Ritter*in"
+  else if (score > 30) character = "Entdecker*in"
+
   return <div className={"flex flex-col pt-20"}>
     <Character {...props} />
 
@@ -98,7 +111,7 @@ export const FinalPage = (props: PageProps) => {
       <svg onClick={() => {
         const shareData = {
           title: 'Deine Online Odyssee',
-          text: 'Wie gut kennst du dich mit Datenschutz aus? Welcher TechTale Charakter bist du? Mache jetzt den Selbsttest!',
+          text: 'Ich bin ein ' + character + '! Welcher TechTale Charakter bist du? Wie gut kennst du dich mit Datenschutz aus? Mache jetzt den Selbsttest!',
           url: 'https://laila-rin.github.io/mafa/',
         }
         navigator.share(shareData).then(() => {
