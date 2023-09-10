@@ -111,7 +111,7 @@ export const FinalPage = (props: PageProps) => {
       <svg onClick={() => {
         const shareData = {
           title: 'Deine Online Odyssee',
-          text: 'Ich bin ein ' + character + '! Welcher TechTale Charakter bist du? Wie gut kennst du dich mit Datenschutz aus? Mache jetzt den Selbsttest!',
+          text: 'Ich bin ein*e ' + character + '! Welcher TechTale Charakter bist du? Wie gut kennst du dich mit Datenschutz aus? Mache jetzt den Selbsttest!',
           url: 'https://laila-rin.github.io/mafa/',
         }
         navigator.share(shareData).then(() => {
