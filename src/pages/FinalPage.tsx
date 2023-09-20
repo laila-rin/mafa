@@ -167,13 +167,14 @@ export const FinalPage = (props: PageProps) => {
     <div>
       <div className={styles["tipps"] + ' p-8' + ' text-2xl'}>Mehr Infos dazu, wie du deine
         Daten online schützen kannst, findest du auf <a href="https://www.aufschrittundklick.de/"
-                                                        className="text-blue-500 hover:underline">www.aufschrittundklick.de</a>.
+                                                        className="text-blue-500 hover:underline"
+                                                        target="_blank">www.aufschrittundklick.de</a>.
       </div>
       <div className={styles["tipps"] + ' p-8' + ' text-xl'}>Diese App ist im Rahmen einer
         Projektarbeit an der Friedrich-Alexander-Universität Erlangen-Nürnberg entstanden. Ich hoffe, du hattest Spaß!
         :)
         <a href="https://www.linkedin.com/in/johanna-schlinger-9a40b1175/"
-           className="text-blue-500 hover:underline"><br/>Johanna</a>
+           className="text-blue-500 hover:underline" target="_blank"><br/>Johanna</a>
       </div>
     </div>
   </div>
