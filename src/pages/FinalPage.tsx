@@ -5,6 +5,7 @@ import * as s from "./FinalPage.module.css";
 import {questions} from "./Questions.ts";
 import {Fragment} from "react";
 import {useScore} from "./useScore.tsx";
+import {Ranking} from "./characters/Ranking.tsx";
 
 const styles = s as unknown as Record<string, string>;
 
@@ -45,7 +46,7 @@ export const FinalPage = (props: PageProps) => {
   }
 
   if (props.isAnswerSelected(questions["Sei ehrlich - benutzt du überall das gleiche Passwort?"]["Ja, immer das gleiche."]) || props.isAnswerSelected(questions["Sei ehrlich - benutzt du überall das gleiche Passwort?"]["Ich denke mir immer neue aus."]) || props.isAnswerSelected(questions["Sei ehrlich - benutzt du überall das gleiche Passwort?"]["Ich habe ein paar verschiedene."])) {
-    tipps.push("Es ist besser, immer ein einzigartiges Passwort zu verwenden. Das hilft, deine Accounts sicherer zu machen. Du könntest einen Passwortmanager verwenden, um dir dabei zu helfen, alle Passwörter sicher zu organisieren.")
+    tipps.push("Es ist besser, jedes Mal ein neues einzigartiges Passwort zu verwenden. Das hilft, deine Accounts sicherer zu machen. Du könntest einen Passwortmanager verwenden, um dir dabei zu helfen, alle Passwörter sicher zu organisieren.")
   }
 
   if (props.isAnswerSelected(questions["Wie viele der Personen, die dir auf Instagram, Snapchat und anderen Medien folgen, kennst du persönlich?"]["Fast niemanden"]) || props.isAnswerSelected(questions["Wie viele der Personen, die dir auf Instagram, Snapchat und anderen Medien folgen, kennst du persönlich?"]["Die meisten"])) {
@@ -72,12 +73,27 @@ export const FinalPage = (props: PageProps) => {
     && props.isAnswerSelected(questions["Benutzt du deinen echten Namen in sozialen Medien?"]["Nie"])
     && props.isAnswerSelected(questions["Verlinkst du deinen Standort auf Instagram Posts?"]["Nie"])) character = "Magier*in"
   else if (score > 120) character = "Adelige*r"
-  else if (score > 90) character = "Ninja"
-  else if (score > 60) character = "Ritter*in"
+  else if (score > 90) character = "Ritter*in"
+  else if (score > 60) character = "Ninja"
   else if (score > 30) character = "Entdecker*in"
+
+  let rank: number = 0;
+  if (character == "Adeliger") rank = 5
+  else if (character == "Ritter*in") rank = 4
+  else if (character == "Ninja") rank = 3
+  else if (character == "Entdecker*in") rank = 2
+  else if (character == "Noviz*in") rank = 1
+  else if (character == "Magier*in") rank = 6
 
   return <div className={"flex flex-col pt-20"}>
     <Character {...props} />
+
+    {rank !== 6 &&
+        <div className={styles["tipps"] + ' p-8'}>Als {character} bist du auf Ranglistenplatz {rank}/5:</div>}
+    {rank === 6 &&
+        <div className={styles["tipps"] + ' p-8'}>Als {character} hast du den geheimen Charakter freigeschalten!:</div>}
+
+    <Ranking/>
 
     <div className={styles["tipps"] + ' p-8'}>Deine Tipps:</div>
 
@@ -110,8 +126,8 @@ export const FinalPage = (props: PageProps) => {
 
       <svg onClick={() => {
         const shareData = {
-          title: 'Deine Online Odyssee',
-          text: 'Ich bin ein*e ' + character + '! Welcher TechTale Charakter bist du? Wie gut kennst du dich mit Datenschutz aus? Mache jetzt den Selbsttest!',
+          title: 'Detektivsaga im Königreich der Daten',
+          text: 'Ich bin ein*e ' + character + '! Welcher TechTale Charakter bist du? Wie gut kennst du dich mit Datenschutz aus? Mache jetzt das Quiz!',
           url: 'https://laila-rin.github.io/mafa/',
         }
         navigator.share(shareData).then(() => {

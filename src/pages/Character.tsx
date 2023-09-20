@@ -16,8 +16,8 @@ export const Character = (props: PageProps) => {
     && props.isAnswerSelected(questions["Benutzt du deinen echten Namen in sozialen Medien?"]["Nie"])
     && props.isAnswerSelected(questions["Verlinkst du deinen Standort auf Instagram Posts?"]["Nie"])) return <Magier/> //Magier
   if (score > 120) return <Adelig/>
-  if (score > 90) return <Ninja/>
-  if (score > 60) return <Ritter/>
+  if (score > 90) return <Ritter/>
+  if (score > 60) return <Ninja/>
   if (score > 30) return <Entdecker/>
   return <Novize/>
 }
