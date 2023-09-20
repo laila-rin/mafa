@@ -77,21 +77,23 @@ export const FinalPage = (props: PageProps) => {
   else if (score > 60) character = "Ninja"
   else if (score > 30) character = "Entdecker*in"
 
-  let rank: number = 0;
-  if (character == "Adeliger") rank = 5
-  else if (character == "Ritter*in") rank = 4
+  let rank = 0;
+  if (character == "Adeliger") rank = 1
+  else if (character == "Ritter*in") rank = 2
   else if (character == "Ninja") rank = 3
-  else if (character == "Entdecker*in") rank = 2
-  else if (character == "Noviz*in") rank = 1
+  else if (character == "Entdecker*in") rank = 4
+  else if (character == "Noviz*in") rank = 5
   else if (character == "Magier*in") rank = 6
 
   return <div className={"flex flex-col pt-20"}>
     <Character {...props} />
 
     {rank !== 6 &&
-        <div className={styles["tipps"] + ' p-8'}>Als {character} bist du auf Ranglistenplatz {rank}/5:</div>}
+        <div className={'flex justify-center ' + styles["tipps"] + ' p-8 gap-6' + ' text-3xl'}>Als {character} bist du
+            auf
+            Ranglistenplatz {rank} von 5.</div>}
     {rank === 6 &&
-        <div className={styles["tipps"] + ' p-8'}>Als {character} hast du den geheimen Charakter freigeschalten!:</div>}
+        <div className={styles["tipps"] + ' p-8'}>Als {character} hast du den geheimen Charakter freigeschalten!</div>}
 
     <Ranking/>
 
