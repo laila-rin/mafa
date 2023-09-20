@@ -89,7 +89,7 @@ export const FinalPage = (props: PageProps) => {
     <Character {...props} />
 
     {rank !== 6 &&
-        <div className={'flex justify-center ' + styles["tipps"] + ' p-8 gap-6' + ' text-3xl'}>Als {character} bist du
+        <div className={'flex justify-center ' + styles["tipps"] + ' p-8' + ' text-3xl'}>Als {character} bist du
             auf
             Ranglistenplatz {rank} von 5.</div>}
     {rank === 6 &&
@@ -162,6 +162,19 @@ export const FinalPage = (props: PageProps) => {
               strokeLinecap="round"/>
       </svg>
 
+    </div>
+
+    <div>
+      <div className={styles["tipps"] + ' p-8' + ' text-2xl'}>Mehr Infos dazu, wie du deine
+        Daten online schützen kannst, findest du auf <a href="https://www.aufschrittundklick.de/"
+                                                        className="text-blue-500 hover:underline">www.aufschrittundklick.de</a>.
+      </div>
+      <div className={styles["tipps"] + ' p-8' + ' text-xl'}>Diese App ist im Rahmen einer
+        Projektarbeit an der Friedrich-Alexander-Universität Erlangen-Nürnberg entstanden. Ich hoffe, du hattest Spaß!
+        :)
+        <a href="https://www.linkedin.com/in/johanna-schlinger-9a40b1175/"
+           className="text-blue-500 hover:underline"><br/>Johanna</a>
+      </div>
     </div>
   </div>
 
